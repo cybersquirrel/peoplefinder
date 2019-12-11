@@ -47,6 +47,16 @@ spec:
                 secretKeyRef:
                   name: app-secrets
                   key: SUPPORT_EMAIL
+            - name: SENDGRID_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: SENDGRID_USERNAME
+            - name: SENDGRID_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: SENDGRID_PASSWORD
             - name: DATABASE_URL
               valueFrom:
                 secretKeyRef:
@@ -122,4 +132,14 @@ spec:
                 secretKeyRef:
                   name: peoplefinder-s3-output
                   key: secret_access_key
+            - name: SENDGRID_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: SENDGRID_USERNAME
+            - name: SENDGRID_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: app-secrets
+                  key: SENDGRID_PASSWORD
 
