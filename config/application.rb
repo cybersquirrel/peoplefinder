@@ -72,8 +72,9 @@ module Peoplefinder
 
     # make the geckoboard publisher available generally
     # NOTE: may need to eager load paths instead if lib code is commonly called
-    config.eager_load_paths << Rails.root.join('lib')
     config.autoload_paths << Rails.root.join('lib')
+
+    require Rails.root.join('lib', 'csv_publisher', 'user_behavior_report.rb')
 
     config.active_record.sqlite3.represent_boolean_as_integer = true
   end
