@@ -5,4 +5,8 @@ class PingController < ActionController::Base
   def index
     render json: Deployment.info
   end
+
+  def httpdump
+    render plain: request.env
+  end
 end
