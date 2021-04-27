@@ -61,6 +61,8 @@ class ApplicationController < ActionController::Base
   helper_method :super_admin?
 
   def ensure_user
+          Rails.logger.error "Polsonby we are in the app controller"
+    flash[:notice] = request.remote_ip
     return true if logged_in?
 
     session[:desired_path] = request.fullpath
